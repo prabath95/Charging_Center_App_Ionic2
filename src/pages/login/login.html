@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar color="primary"  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+<!-- -->
+<ion-content padding class="bgAuth">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input [(ngModel)]="email" type="email" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input [(ngModel)]="password" type="password" [ngModelOptions]="{standalone: true}"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-list radio-group [(ngModel)]="Role">
+        <ion-item>
+            <ion-label>User</ion-label>
+            <ion-radio checked="true" value="User" ></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Location Admin</ion-label>
+            <ion-radio value="Admin"></ion-radio>
+        </ion-item>
+        </ion-list>
+        <div style="height: 6vw"></div>
+        <button ion-button full round color="primary" class="tangoAnimate quick tangoCentre" (click)="login()">
+            Sign In
+        </button>
+        <div style="height: 6vw"></div>
+        <button ion-button full round color="Real" class="tangoAnimate quick tangoCentre" (click)="FBLogin()">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Log In with Facebook
+        </button>
+        <div style="height: 6vw"></div>
+        <button ion-button full round color="gRed" class="tangoAnimate quick tangoCentre"  (click)="googleLogin()" [ngClass]="setClass()">
+            <ion-icon name="logo-google" ></ion-icon>
+            Log In with Google
+        </button>
+        <button ion-button block clear  (click)="SignUp()">No have an account? Register Now</button>  
+        <button ion-button block clear (click)="showPrompt()">Forgot Password</button>
+</ion-content>  

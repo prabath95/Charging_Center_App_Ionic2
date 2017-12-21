@@ -1,0 +1,166 @@
+<!--
+  Generated template for the Details page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+  <ion-navbar color="primary"  >
+    <ion-title>Details</ion-title>
+
+     <ion-buttons end>
+     <button ion-button icon-only (click)="refreshPage()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="addDetails()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+
+
+<h2> History </h2>
+ <ion-item>
+      <ion-label>Search from Date</ion-label>
+      <ion-datetime [(ngModel)]="date" displayFormat="MMM DD YYYY" (ionChange)="searchD(date)"></ion-datetime>
+    </ion-item>
+  
+
+
+<ion-list>
+  <ion-item-sliding *ngFor=" let details of showDetails">
+  <ion-item >
+    <p>Charging Date :{{details.myDate}}</p> 
+    <p>Charging Time :{{details.mytime}}</p>
+    <p>Meter Reading at Start :{{details.MRStart}}</p>
+    <p>Meter Reading at the end:{{details.MRend}}</p>
+    <p>Milage :{{details.Milage}}</p>
+    <p>Average:{{details.Average}}</p>
+    </ion-item>
+    <ion-item-options side = "right">
+  <button ion-button color="secondary" (click)="editDetails(details)">
+    <ion-icon name="md-create">Edit</ion-icon>
+    </button>
+  </ion-item-options>
+
+  <ion-item-options side = "left" >
+    <button ion-button color="danger" (click)="deleteDetails(details.$key)">
+    <ion-icon name="md-trash">Delete</ion-icon>
+    </button>
+  </ion-item-options>
+
+</ion-item-sliding>
+</ion-list>
+</ion-content>
+
+
+
+
+
+
+
+<!---<ion-content padding >
+
+    <h2> Fill Details </h2>
+    <ion-list>
+    <ion-item-sliding *ngFor=" let details of details|async">
+    <ion-item >
+      <p>
+    <ion-label stacked  >Charging Date</ion-label>
+    <ion-datetime [(ngModel)]="myDate"ngControl="myDate"  type="datetime" placeholder="Fill Charging date"></ion-datetime>
+    </p>
+    <p>
+      <ion-label stacked>Charging Time </ion-label>
+      <ion-datetime   displayFormat="HH:mm" [(ngModel)]="mytime"ngControl="mytime"  type="datetime" placeholder="Fill your Charged time" ></ion-datetime>
+    </p>
+        
+          <p>
+        <ion-label stacked>Meter Reading at Start</ion-label>
+        <ion-input [(ngModel)]="MRStart" ngControl="MRStart" type="float" placeholder="Fill Meter Reading at the Start"></ion-input>
+        </p>
+        
+
+          <p>
+          <ion-label stacked>Meter Reading at the end</ion-label>
+          <ion-input [(ngModel)]="MRend" ngControl="MRend"  type="float" placeholder="Fill Meter Reading at the End"></ion-input>
+        </p>
+
+         <p>
+          <ion-label stacked>Milage</ion-label>
+          <ion-input [(ngModel)]="Milage" ngControl="Milage" type="float" placeholder="Fill milage"></ion-input>
+       </p>
+
+          <p>
+          <ion-label stacked>Average</ion-label>
+          <ion-input [(ngModel)]="Average"  ngControl="Average"  type="float" placeholder="Fill Average"></ion-input>
+          </p>
+    </ion-item>
+    
+    <ion-item-options side = "right">
+  <button ion-button color="secondary" (click)="editDetails(details)">
+    <ion-icon name="md-create">Edit</ion-icon>
+    </button>
+  </ion-item-options>
+
+  <ion-item-options side = "left" >
+    <button ion-button color="danger" (click)="deleteDetails(details.$key)">
+    <ion-icon name="md-trash">Delete</ion-icon>
+    </button>
+  </ion-item-options>
+
+</ion-item-sliding>
+</ion-list>
+</ion-content>
+
+    <ion-label stacked  >Charging Date</ion-label>
+    <ion-datetime [(ngModel)]="myDate"ngControl="myDate"  type="datetime" placeholder="Fill Charging date"></ion-datetime>
+    
+      <ion-label stacked>Charging Time </ion-label>
+      <ion-datetime   displayFormat="HH:mm" [(ngModel)]="mytime"ngControl="mytime"  type="datetime" placeholder="Fill your Charged time" ></ion-datetime>
+      
+        
+         
+        <ion-label stacked>Meter Reading at Start</ion-label>
+        <ion-input [(ngModel)]="MRStart" ngControl="MRStart" type="float" placeholder="Fill Meter Reading at the Start"></ion-input>
+        
+
+         
+          <ion-label stacked>Meter Reading at the end</ion-label>
+          <ion-input [(ngModel)]="MRend" ngControl="MRend"  type="float" placeholder="Fill Meter Reading at the End"></ion-input>
+        
+
+        
+          <ion-label stacked>Milage</ion-label>
+          <ion-input [(ngModel)]="Milage" ngControl="Milage" type="float" placeholder="Fill milage"></ion-input>
+       
+
+         
+          <ion-label stacked>Average</ion-label>
+          <ion-input [(ngModel)]="Average"  ngControl="Average"  type="float" placeholder="Fill Average"></ion-input>
+          
+     
+
+    <ion-item-options side = "right">
+  <button ion-button color="secondary" (click)="editDetails(details)">
+    <ion-icon name="md-create">Edit</ion-icon>
+    </button>
+  </ion-item-options>
+
+  <ion-item-options side = "left" >
+    <button ion-button color="danger" (click)="deleteDetails(details.$key)">
+    <ion-icon name="md-trash">Delete</ion-icon>
+    </button>
+  </ion-item-options>
+
+</ion-item-sliding>
+</ion-list>
+</ion-content>-->
+
+
+
+   
+
+

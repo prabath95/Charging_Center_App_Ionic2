@@ -1,0 +1,32 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Station information</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-fab right top>
+    <button ion-fab color="secondary" (click)="Checkin()">
+      <ion-icon name="navigate"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-card>
+    <img src={{iStation.eImage}} height="300px"/>
+    <ion-card-content>
+    <ion-card-title>
+      {{iStation.eName}}
+      </ion-card-title>
+    <p>
+      Address         : {{iStation.eaddress}}<br/>
+      Phone           : {{iStation.ephone}} <br/>
+      Charging Points : {{iStation.eplugs}} <br/>
+      Station Type    : {{iStation.est}} <br/>
+    </p>
+    </ion-card-content>
+</ion-card>
+<div text-center padding-top=10px>
+    <button ion-button full name="bookAppointment" (click)="bookAppointment()" >
+    <ion-icon ios="ios-calendar" name="md-calendar" padding-right= "10px"></ion-icon>
+    Book an appointment</button>
+  </div>
+</ion-content>

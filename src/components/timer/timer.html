@@ -1,0 +1,40 @@
+<!-- Generated template for the Timer component -->
+<div>
+  <ion-item class="no-bottom-border item">
+    <h1 text-center color="secondary" class="timer-button timer-text">{{timer.displayTime}}</h1>
+  </ion-item>
+</div>
+<div padding>
+  <ion-fab bottom left *ngIf="timer.runTimer && timer.hasStarted && !timer.hasFinished">
+    <button ion-fab  color="danger" (click)="pauseTimer()">
+  <ion-icon name="pause"></ion-icon>
+  </button>
+  </ion-fab>
+</div>
+
+<div padding>
+  <ion-fab bottom left *ngIf="!timer.runTimer && timer.hasStarted && !timer.hasFinished">
+    <button ion-fab color="secondary" (click)="resumeTimer()">
+<ion-icon name="play"></ion-icon>
+</button>
+  </ion-fab>
+
+</div>
+<div padding>
+
+  <ion-fab bottom left *ngIf="!timer.hasStarted">
+    <button ion-fab color="secondary" (click)="startTimer()" item-right>
+<ion-icon name="play"></ion-icon>
+</button>
+  </ion-fab>
+</div>
+
+<div padding>
+
+  <ion-fab bottom right *ngIf="!timer.runTimer && (timer.hasStarted || timer.hasFinished) || timer.hasFinished">
+  <button ion-fab   color="danger" (click)="initTimer()" item-left>
+
+    <ion-icon name="refresh"></ion-icon>
+    </button>
+  </ion-fab>
+</div>

@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >Mange Stations</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>                                           
+<ion-list>
+  <ion-item-sliding *ngFor="let stat of stationList">
+   <ion-item>
+      <div padding-top=10px>
+      <p>{{stat.name}}</p>
+      </div>
+     </ion-item>
+     <ion-item-options side="right">
+       <button ion-button color="secondary" (click)="editStation(stat)">
+              <ion-icon name="md-create" ></ion-icon>
+              Edit</button>
+    </ion-item-options>
+    <ion-item-options side="left">
+       <button ion-button color="danger" (click)="editStation(stat)">
+              <ion-icon name="md-trash" ></ion-icon>
+              Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+ </ion-list>
+ <div text-center padding-top=10px>
+    <button ion-button full name="addStation" (click)="navToStations()" >Add new Station</button>
+  </div>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar color="primary"  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SignUp</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input [(ngModel)]="fName" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input [(ngModel)]="lName" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input [(ngModel)]="user.password" type="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Confirm Password</ion-label>
+                <ion-input [(ngModel)]="Confirm" type="password"></ion-input>
+            </ion-item>
+        </ion-list>
+                <ion-list radio-group [(ngModel)]="Role">
+        <ion-item>
+            <ion-label>User</ion-label>
+            <ion-radio checked="true" value="User" ></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Location Admin</ion-label>
+            <ion-radio value="Admin"></ion-radio>
+        </ion-item>
+        </ion-list>
+    <button ion-button full round color="primary" (click)="registerUser()"> Sign In </button>
+</ion-content>

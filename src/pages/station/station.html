@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title > Add new Stations</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refreshPage()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+      <ion-label>Select Station Type</ion-label>
+      <ion-select [(ngModel)]="st" submitText="Okay" cancelText="Back">
+        <ion-option value="Residence">Residence</ion-option>
+        <ion-option value="Charging Station">Charging Station</ion-option>
+      </ion-select>
+    </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Station Name" [(ngModel)]="StationName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label text-center>Coordinates</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" placeholder="Latitude" [(ngModel)]="Slatitude"></ion-input>
+    <ion-input type="text" placeholder="Longtitude" [(ngModel)]="Slongtitude"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label>No of charge plugs</ion-label>
+      <ion-select [(ngModel)]="splugs" submitText="Okay" cancelText="Back">
+        <ion-option value="1" checked="true">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+      </ion-select>
+    </ion-item>
+  <ion-item>
+    <ion-label>Add Image URL</ion-label>
+    <ion-input type="text" [(ngModel)]="sImage"></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label text-center>Contact Details</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Phone</ion-label>
+    <ion-input type="text" [(ngModel)]="sphone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input type="text" [(ngModel)]="semail"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Address</ion-label>
+    <ion-input type="text" [(ngModel)]="sAddress"></ion-input>
+  </ion-item>
+  <div text-center padding-top=10px>
+    <button ion-button full name="addEntry" (click)="addStation ()">Add Station</button>
+  </div>
+  </ion-list>
+</ion-content>

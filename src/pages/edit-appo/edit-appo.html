@@ -1,0 +1,60 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title>Edit Appointments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+<input type="hidden" [(ngModel)]="Appointment.id" />
+    <ion-item>
+      <ion-label fixed>Date</ion-label>
+      <ion-datetime [(ngModel)]="Appointment.rdate" displayFormat="MMM DD YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Time</ion-label>
+      <ion-datetime [(ngModel)]="Appointment.rtime" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Select Time Duration</ion-label>
+      <ion-select [(ngModel)]="Appointment.rtd" submitText="Okay" cancelText="Back">
+        <ion-option value="15 minutes">15 minutes</ion-option>
+        <ion-option value="30 minutes">30 minutes</ion-option>
+        <ion-option value="1 hour">1 hour</ion-option>
+        <ion-option value="2 hours">2 hours</ion-option>
+        <ion-option value="3 hours">3 hours</ion-option>
+        <ion-option value="4 hours">4 hours</ion-option>
+        <ion-option value="5 hours">5 hours</ion-option>
+        <ion-option value="6 hours">6 hours</ion-option>
+        <ion-option value="7 hours">7 hours</ion-option>
+        <ion-option value="8 hours">8 hours</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Select Type of Plug</ion-label>
+      <ion-select [(ngModel)]="Appointment.rtp" submitText="Okay" cancelText="Back">
+        <ion-option value="NEMA 15">NEMA 15</ion-option>
+        <ion-option value="Tesla">Tesla</ion-option>
+        <ion-option value="NEMA 50">NEMA 50</ion-option>
+        <ion-option value="SAE J1772">SAE J1772</ion-option>
+        <ion-option value="SAE Combo">SAE Combo</ion-option>
+        <ion-option value="CHAdeMO">CHAdeMO</ion-option>
+        <ion-option value="NEMA 20">NEMA 20</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <div padding>
+      <button ion-button color="primary" block (click)="editApp(Appointment.id,Appointment.rdate,Appointment.rtime,Appointment.rtd,Appointment.rtp)">Edit</button>
+    </div>
+
+  </ion-list>
+
+
+
+</ion-content>

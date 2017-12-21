@@ -1,0 +1,29 @@
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title>Rate Charging Center</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-item>
+      <ion-range min="-200" max="200" pin="true" [(ngModel)]="star" color="secondary">
+        <ion-icon range-left small name="star" class="icony"></ion-icon>
+        <ion-icon range-right big name="star" class="icony"></ion-icon>
+      </ion-range>
+    </ion-item>
+<br>
+<br>
+
+<ion-card>
+
+  <ion-card-header>Comment</ion-card-header>
+
+  <ion-card-content>
+    <textarea  class="big" [(ngModel)]="comm"></textarea>
+  </ion-card-content>
+
+</ion-card>
+  <button ion-button color="primary" block (click)="addRate(star,comm)"> Save </button>
+</ion-content>
+

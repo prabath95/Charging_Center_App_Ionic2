@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Map Page</ion-title>
+  </ion-navbar>
+  <ion-searchbar [(ngModel)]="autocomplete.query" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item *ngFor="let item of autocompleteItems" tappable   (click)="chooseItem(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+  <div #map id="map"></div>
+  <div *ngIf="connection">
+    <ion-fab left bottom >
+      <button ion-fab color="primary"><ion-icon name="arrow-dropright"></ion-icon></button>
+      <ion-fab-list side="right">
+        <button ion-fab color="primary" (click)="getCurrentLocation()"><ion-icon name="locate"></ion-icon></button>
+        <button ion-fab color="primary" (click)="addMarkersToMap()"><ion-icon name="pin"></ion-icon></button>
+        <button ion-fab color="primary" (click)="find_closest_marker()"><ion-icon name="navigate"></ion-icon></button>
+        <button ion-fab color="primary"><ion-icon name="map"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  </div>
+</ion-content>

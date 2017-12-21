@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title side="center" > Add new Stations</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+   <ion-item>
+    <ion-label>Start</ion-label>
+    <ion-input type="text" [(ngModel)]="start"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Destination</ion-label>
+    <ion-input type="text" [(ngModel)]="destinantion"></ion-input>
+  </ion-item>
+  <div text-center padding-top=20px>
+    <button ion-button full name="directions" (click)="calculateAndDisplayRoute()">Get Directions</button>
+  </div>
+  </ion-list>
+  <div padding-top=20px #map id="map"></div>
+</ion-content>
